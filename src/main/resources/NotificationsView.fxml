@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.plantnursery.controller.gui.fx.NotificationsGUIControllerFX">
+    <BorderPane prefHeight="600.0" prefWidth="800.0">
+        <top>
+            <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" prefWidth="600.0" spacing="10" style="-fx-background-color: #3C6E47;" styleClass="navbar" BorderPane.alignment="CENTER">
+                <Label prefHeight="30.0" prefWidth="147.0" styleClass="navbar-title" text="PlantNursery" />
+                <Pane minHeight="-Infinity" prefHeight="30.0" prefWidth="414.0" />
+                <Button fx:id="home" mnemonicParsing="false" onAction="#goHome" prefHeight="52.0" prefWidth="80.0" styleClass="navbar-button" text="Home" />
+                <Button fx:id="logout" mnemonicParsing="false" onAction="#logout" prefHeight="52.0" prefWidth="85.0" styleClass="navbar-button" text="Log Out" />
+            </HBox>
+        </top>
+        <bottom>
+            <Pane prefHeight="48.0" prefWidth="600.0" style="-fx-background-color: #3C6E47;" styleClass="navbar" BorderPane.alignment="CENTER">
+                <Label fx:id="errorMsg" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="14.0" layoutY="7.0" prefHeight="35.0" prefWidth="772.0" styleClass="text-error" text="Unable to complete the operation. If the problem persists, please contact support." wrapText="true" />
+            </Pane>
+        </bottom>
+      <center>
+         <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #3C6E47;" BorderPane.alignment="CENTER">
+            <children>
+               <TableView fx:id="table" layoutX="27.0" layoutY="21.0" prefHeight="372.0" prefWidth="745.0">
+                 <columns>
+                     <TableColumn fx:id="type" prefWidth="105.60000610351562" resizable="false" text="Type" />
+                   <TableColumn fx:id="setPlant" prefWidth="250.4000244140625" resizable="false" text="SetPlant" />
+                   <TableColumn fx:id="code" prefWidth="228.79998779296875" resizable="false" text="OrderCode" />
+                     <TableColumn fx:id="time" prefWidth="165.60003662109375" resizable="false" text="Time" />
+                 </columns>
+               </TableView>
+               <Button fx:id="selected" layoutX="168.0" layoutY="415.0" mnemonicParsing="false" onAction="#deleteSelected" prefHeight="47.0" prefWidth="150.0" text="Delete Selected" />
+               <Button fx:id="all" layoutX="479.0" layoutY="415.0" mnemonicParsing="false" onAction="#deleteAll" prefHeight="47.0" prefWidth="150.0" text="Delete All" />
+            </children>
+         </AnchorPane>
+      </center>
+    </BorderPane>
+</AnchorPane>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.plantnursery.controller.gui.fx.LoginAndSignupGUIControllerFX">
+   <BorderPane prefHeight="600.0" prefWidth="800.0">
+      <top>
+         <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" prefWidth="600.0" spacing="10"
+               style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+            <children>
+               <Label prefHeight="30.0" prefWidth="147.0" styleClass="navbar-title" text="PlantNursery"/>
+               <Pane minHeight="-Infinity" prefHeight="30.0" prefWidth="509.0"/>
+               <Button fx:id="home" mnemonicParsing="false" onAction="#goHome" prefHeight="52.0" prefWidth="80.0"
+                       styleClass="navbar-button" text="Home"/>
+            </children>
+         </HBox>
+      </top>
+      <center>
+         <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #3C6E47;"
+               BorderPane.alignment="CENTER">
+            <children>
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="502.0" prefWidth="400.0">
+                  <children>
+                     <Button fx:id="loginButton" layoutX="139.0" layoutY="326.0" mnemonicParsing="false"
+                             onAction="#loginAction" prefHeight="42.0" prefWidth="121.0" text="Log In"/>
+                     <TextField fx:id="userLogin" layoutX="67.0" layoutY="195.0" prefHeight="34.0" prefWidth="266.0"
+                                promptText="Username" styleClass="input-field"/>
+                     <PasswordField fx:id="passLogin" layoutX="66.0" layoutY="261.0" prefHeight="34.0" prefWidth="267.0"
+                                    promptText="Password" styleClass="input-field"/>
+                     <Label layoutX="154.0" layoutY="96.0" styleClass="main-title"
+                            text="Log In">
+                        <font>
+                           <Font size="36.0"/>
+                        </font>
+                     </Label>
+                     <Line endX="31.0" endY="425.6000061035156" layoutX="369.0" layoutY="76.0" startX="31.0"
+                           startY="-76.0"/>
+                     <Label fx:id="loginMessage" alignment="TOP_CENTER" layoutX="28.0" layoutY="398.0" prefHeight="65.0"
+                            prefWidth="343.0" styleClass="message" text="Error message" wrapText="true"/>
+                  </children>
+               </AnchorPane>
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="502.0" prefWidth="400.0">
+                  <children>
+                     <Label layoutX="137.0" layoutY="64.0" styleClass="main-title"
+                            text="Sign Up">
+                        <font>
+                           <Font size="36.0"/>
+                        </font>
+                     </Label>
+                     <TextField fx:id="lastname" layoutX="215.0" layoutY="146.0" prefHeight="34.0" prefWidth="130.0"
+                                promptText="Lastname" styleClass="input-field"/>
+                     <PasswordField fx:id="password" layoutX="215.0" layoutY="291.0" prefHeight="34.0" prefWidth="130.0"
+                                    promptText="Password" styleClass="input-field"/>
+                     <Button fx:id="signupButton" layoutX="141.0" layoutY="356.0" mnemonicParsing="false"
+                             onAction="#signupAction" prefHeight="42.0" prefWidth="121.0" text="Sign Up"/>
+                     <TextField fx:id="paypal" layoutX="57.0" layoutY="241.0" prefHeight="34.0" prefWidth="290.0"
+                                promptText="PayPal Email" styleClass="input-field"/>
+                     <TextField fx:id="firstname" layoutX="57.0" layoutY="146.0" prefHeight="34.0" prefWidth="134.0"
+                                promptText="Firstname" styleClass="input-field"/>
+                     <TextField fx:id="email" layoutX="57.0" layoutY="192.0" prefHeight="34.0" prefWidth="288.0"
+                                promptText="Email" styleClass="input-field"/>
+                     <TextField fx:id="user" layoutX="58.0" layoutY="291.0" prefHeight="34.0" prefWidth="132.0"
+                                promptText="Username" styleClass="input-field"/>
+                     <Label fx:id="signupMessage" alignment="TOP_CENTER" layoutX="23.0" layoutY="422.0"
+                            prefHeight="65.0" prefWidth="357.0" styleClass="message" text="Error message"
+                            wrapText="true"/>
+                  </children>
+               </AnchorPane>
+            </children>
+         </HBox>
+      </center>
+      <bottom>
+         <Pane prefHeight="48.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+            <children>
+               <Label fx:id="errorMsg" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="14.0" layoutY="7.0"
+                      prefHeight="35.0" prefWidth="772.0" styleClass="text-error"
+                      text="Unable to complete the operation. If the problem persists, please contact support."
+                      wrapText="true"/>
+            </children>
+         </Pane>
+      </bottom>
+   </BorderPane>
+</AnchorPane>

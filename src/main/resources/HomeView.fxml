@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.plantnursery.controller.gui.fx.HomeGUIControllerFX">
+   <BorderPane prefHeight="600.0" prefWidth="800.0">
+      <top>
+         <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" prefWidth="600.0" spacing="10" style="-fx-background-color: #ffffff;" styleClass="navbar" BorderPane.alignment="CENTER">
+            <Label prefHeight="30.0" prefWidth="147.0" styleClass="navbar-title" text="PlantNursery" />
+            <Pane minHeight="-Infinity" prefHeight="30.0" prefWidth="517.0" />
+            <Button fx:id="login" mnemonicParsing="false" onAction="#login" prefHeight="52.0" prefWidth="74.0" styleClass="navbar-button" text="Log In" />
+         </HBox>
+      </top>
+      <center>
+         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" style="-fx-background-color: #3C6E47;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="131.0" prefWidth="600.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="68.0" prefWidth="564.0" styleClass="main-title" text="Best plants for this year!" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="40.0" />
+               </font></Label>
+            <Pane prefHeight="36.0" prefWidth="800.0" />
+            <VBox prefHeight="278.0" prefWidth="800.0">
+               <HBox alignment="CENTER" prefHeight="68.0" prefWidth="800.0" spacing="10" styleClass="search-bar">
+                  <TextField fx:id="searchBar" onKeyPressed="#searchMonthEnter" prefHeight="34.0" prefWidth="411.0" promptText="Search by planting month" styleClass="search-field" />
+                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchMonth" styleClass="search-button" text="🔍" textFill="WHITE" />
+               </HBox>
+               <HBox alignment="CENTER" prefHeight="68.0" prefWidth="600.0" spacing="10" styleClass="search-bar">
+                  <children>
+                     <Pane prefHeight="47.0" prefWidth="124.0" />
+                     <Label fx:id="message" alignment="TOP_LEFT" cache="true" contentDisplay="CENTER" prefHeight="47.0" prefWidth="457.0" styleClass="text-alert" text="Month not found!" visible="false" wrapText="true" />
+                     <Pane prefHeight="47.0" prefWidth="164.0" />
+                  </children>
+               </HBox>
+            </VBox>
+         </VBox>
+      </center>
+      <bottom>
+         <Pane prefHeight="48.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" styleClass="navbar" BorderPane.alignment="CENTER">
+            <Label fx:id="errorMsg" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="14.0" layoutY="7.0" prefHeight="35.0" prefWidth="772.0" styleClass="text-error" text="Unable to complete the operation. If the problem persists, please contact support." visible="false" wrapText="true" />
+         </Pane>
+      </bottom>
+   </BorderPane>
+</AnchorPane>
