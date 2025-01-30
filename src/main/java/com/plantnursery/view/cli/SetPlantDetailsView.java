@@ -1,8 +1,5 @@
 package com.plantnursery.view.cli;
 
-
-import com.plantnursery.view.cli.AbstractView;
-
 public class SetPlantDetailsView extends AbstractView {
 
     @Override

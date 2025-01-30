@@ -6,7 +6,7 @@ import com.plantnursery.exception.IncorrectDataException;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-class TestBookingBean {
+class TestOrderBean {
 
     @Test
     void testSetEmail() throws IncorrectDataException {

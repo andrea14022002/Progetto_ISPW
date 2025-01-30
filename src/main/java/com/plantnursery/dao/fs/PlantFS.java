@@ -29,16 +29,15 @@ public class PlantFS implements PlantDAO {
         }
     }
 
-    private Predicate<String[]> uniqueKey(String idSetPlant, String name) {
-        return r -> r[0].equals(name) && r[5].equals(String.valueOf(idSetPlant));
-    }
-
     private Plant fromCvsRecord(String[] r) {
         return new Plant(r[0], r[1]);
+    }
+
+    private Predicate<String[]> uniqueKey(String idSetPlant, String name) {
+        return r -> r[0].equals(name) && r[5].equals(String.valueOf(idSetPlant));
     }
 
     private String[] toCvsRecord(Plant plant, Integer idSetPlant) {
         return new String[]{plant.getName(), plant.getScientificName(), String.valueOf(idSetPlant)};
     }
-
 }

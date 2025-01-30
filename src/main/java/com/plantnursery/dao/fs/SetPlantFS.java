@@ -1,16 +1,11 @@
 package com.plantnursery.dao.fs;
 
 import com.plantnursery.dao.SetPlantDAO;
-import com.plantnursery.dao.fs.OrderFS;
-import com.plantnursery.dao.fs.PlantFS;
 import com.plantnursery.exception.dao.DAOException;
-import com.plantnursery.model.Order;
 import com.plantnursery.model.SetPlant;
-import com.plantnursery.model.Plant;
 import com.plantnursery.utils.dao.ObjectSerializationHandler;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.function.Predicate;
@@ -25,8 +20,7 @@ public class SetPlantFS implements SetPlantDAO {
     public List<SetPlant> selectSetPlantsByMonth(String month) throws DAOException {
         try {
             ObjectSerializationHandler<SetPlant> hanlder = new ObjectSerializationHandler<>(FILE_PATH);
-            List <SetPlant> setPlants = hanlder.findObject(setPlant -> setPlant.getPlantMonth().equalsIgnoreCase(month));
-            return setPlants;
+            return hanlder.findObject(setPlant -> setPlant.getPlantMonth().equalsIgnoreCase(month));
         } catch (IOException | ClassNotFoundException e) {
             throw new DAOException("Error in selectSetPlantsByMonth: " + e.getMessage(), e, GENERIC);
         }

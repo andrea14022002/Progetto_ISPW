@@ -1,8 +1,6 @@
 package com.plantnursery.dao.fs;
 
 import com.plantnursery.dao.SellerDAO;
-import com.plantnursery.dao.fs.SetPlantFS;
-import com.plantnursery.dao.fs.NotificationFS;
 import com.plantnursery.exception.dao.DAOException;
 import com.plantnursery.model.SetPlant;
 import com.plantnursery.model.Notification;

@@ -1,11 +1,7 @@
 package com.plantnursery.model;
 
-import com.plantnursery.model.SetPlant;
-
 import java.io.Serial;
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
 import java.util.*;
 
 public class SetPlant implements Serializable {
@@ -116,23 +112,6 @@ public class SetPlant implements Serializable {
     public Integer getIdSet() {
         return this.idSet;}
 
-    /*
-    public Integer getSetAvailability(String type) {
-        if (getLimitTicket(type) == 0){
-            return 0;
-        }
-
-        int availability = getLimitTicket(type) - ticketsSold.get(type);
-        if(availability < 0) {
-            throw new IllegalStateException("Impossible to have negative availability.");
-        }
-        return availability;
-    }
-
-    public Integer getBookedTickets(String type) {
-        return ticketsSold.get(type);
-    }
-*/
     public List<Order> getOrders() {
         return this.orders;
     }
@@ -152,7 +131,6 @@ public class SetPlant implements Serializable {
     public void setTransientParams() {
         this.orders = new ArrayList<>();
         this.plants = new ArrayList<>();
-        //this.ticketsSold = new HashMap<>();
     }
 
 

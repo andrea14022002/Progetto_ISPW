@@ -1,7 +1,5 @@
 package com.plantnursery.view.cli;
 
-import com.plantnursery.view.cli.AbstractView;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -9,8 +7,8 @@ public class OrderView extends AbstractView {
 
     @Override
     public int showMenu() {
-        printMenu("ORDER PAGE", "New order", "Back", "Home", "Exit");
-        return getInputMenu(5);
+        printMenu("ORDER PAGE", "Show plants","New order", "Back", "Home", "Exit");
+        return getInputMenu(6);
     }
 
     public void showPlants(String[] plants) {
@@ -36,17 +34,16 @@ public class OrderView extends AbstractView {
         showMessage("DATA INSERTED CHECK");
         showMessage("Firstname: " + data[0]);
         showMessage("Lastname: " + data[1]);
-        showMessage("Cap: " + data[2]);
+        showMessage("Address: " + data[2]);
         showMessage("City: " + data[3]);
         showMessage("Email: " + data[4]);
         showMessage("Telephone Number: " + data[5]);
-        showMessage("Address: " + data[6]);
-        showMessage("PayPal: " + data[7]);
+        showMessage("PayPal: " + data[6]);
 
-        if(data[7].equalsIgnoreCase("Y")){
-            data[7] = "true";
+        if(data[6].equalsIgnoreCase("Y")){
+            data[6] = "true";
         } else {
-            data[7] = "false";
+            data[6] = "false";
         }
 
         int choice;

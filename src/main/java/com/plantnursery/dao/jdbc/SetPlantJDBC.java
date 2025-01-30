@@ -1,14 +1,9 @@
 package com.plantnursery.dao.jdbc;
 
 import com.plantnursery.dao.SetPlantDAO;
-//import com.plantnursery.dao.jdbc.OrderJDBC;
-import com.plantnursery.dao.jdbc.SingletonConnector;
-//import com.plantnursery.dao.jdbc.PlantJDBC;
 import com.plantnursery.dao.jdbc.queries.SetPlantQueries;
 import com.plantnursery.exception.dao.DAOException;
-import com.plantnursery.model.Order;
 import com.plantnursery.model.SetPlant;
-import com.plantnursery.model.Plant;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

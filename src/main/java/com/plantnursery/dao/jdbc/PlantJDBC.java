@@ -1,7 +1,6 @@
 package com.plantnursery.dao.jdbc;
 
 import com.plantnursery.dao.PlantDAO;
-import com.plantnursery.dao.jdbc.SingletonConnector;
 import com.plantnursery.dao.jdbc.queries.PlantQueries;
 import com.plantnursery.exception.dao.DAOException;
 import com.plantnursery.model.Plant;
@@ -18,7 +17,6 @@ public class PlantJDBC implements PlantDAO {
 
     private static final String COLUMN_SCIENTIFIC_NAME = "ScientificName";
     private static final String COLUMN_NAME = "Name";
-    //private static final String COLUMN_DESC = "Desc";
 
     @Override
     public List<Plant> selectPlants(Integer idSetPlant) throws DAOException {

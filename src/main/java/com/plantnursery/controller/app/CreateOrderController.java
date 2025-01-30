@@ -113,7 +113,7 @@ public class CreateOrderController {
     public void sendReservation(SetPlantBean setPlantBean, OrderBean orderBean) throws OperationFailedException, DuplicateEntryException {
 
         try {
-            checkOrderValid(orderBean, setPlantBean);
+            checkOrderValid(setPlantBean);
             Seller seller = sellerDAO.selectSeller(setPlantBean.getSellerUsername());
             if (seller == null) {
                 String msg = "Inconsistent data. Seller not found for set: " + setPlantBean.getIdSet();
@@ -150,10 +150,9 @@ public class CreateOrderController {
         }
     }
 
-    private void checkOrderValid(OrderBean orderBean, SetPlantBean setPlantBean) throws OperationFailedException {
+    private void checkOrderValid(SetPlantBean setPlantBean) throws OperationFailedException {
         if (setPlantBean.getAvailability() == 1){
             throw new OperationFailedException("Orders are closed.");
         }
-
     }
 }

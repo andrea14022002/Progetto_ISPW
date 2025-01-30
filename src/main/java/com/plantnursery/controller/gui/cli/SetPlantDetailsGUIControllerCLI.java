@@ -1,8 +1,6 @@
 package com.plantnursery.controller.gui.cli;
 
 import com.plantnursery.bean.SetPlantBean;
-import com.plantnursery.controller.gui.cli.AbstractGUIControllerCLI;
-import com.plantnursery.controller.gui.cli.OrderGUIControllerCLI;
 import com.plantnursery.utils.SessionManager;
 import com.plantnursery.utils.view.cli.ReturningHome;
 import com.plantnursery.view.cli.SetPlantDetailsView;
@@ -49,7 +47,7 @@ public class SetPlantDetailsGUIControllerCLI extends AbstractGUIControllerCLI {
 
     private void createOrder() {
         SetPlantBean setPlantBean = SessionManager.getSessionManager().getSessionFromId(currentSession).getSetPlant();
-        if (Boolean.TRUE.equals(setPlantBean.getAvailability())){
+        if (setPlantBean.getAvailability() == 1){
             setPlantDetailsView.showError("Set Plant is closed for orders.");
         }else {
             OrderGUIControllerCLI orderGUIController = new OrderGUIControllerCLI(currentSession, returningHome);

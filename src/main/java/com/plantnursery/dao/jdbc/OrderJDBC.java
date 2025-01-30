@@ -3,11 +3,7 @@ package com.plantnursery.dao.jdbc;
 import com.plantnursery.dao.jdbc.queries.OrderQueries;
 import com.plantnursery.model.Order;
 import com.plantnursery.dao.OrderDAO;
-import com.plantnursery.dao.jdbc.SingletonConnector;
-import com.plantnursery.dao.jdbc.queries.SellerQueries;
 import com.plantnursery.exception.dao.DAOException;
-import com.plantnursery.model.Order;
-import com.plantnursery.model.Seller;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

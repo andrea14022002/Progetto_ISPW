@@ -1,9 +1,6 @@
 package com.plantnursery.dao.jdbc;
 
 import com.plantnursery.dao.SellerDAO;
-import com.plantnursery.dao.jdbc.*;
-import com.plantnursery.dao.jdbc.NotificationJDBC;
-import com.plantnursery.dao.jdbc.SingletonConnector;
 import com.plantnursery.dao.jdbc.queries.SellerQueries;
 import com.plantnursery.exception.EncryptionException;
 import com.plantnursery.exception.dao.DAOException;

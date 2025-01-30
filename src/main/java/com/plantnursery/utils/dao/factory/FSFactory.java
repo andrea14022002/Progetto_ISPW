@@ -3,7 +3,6 @@ package com.plantnursery.utils.dao.factory;
 import com.plantnursery.dao.OrderDAO;
 import com.plantnursery.dao.*;
 import com.plantnursery.dao.fs.*;
-import com.plantnursery.utils.dao.factory.FactorySingletonDAO;
 
 public class FSFactory extends FactorySingletonDAO {
 

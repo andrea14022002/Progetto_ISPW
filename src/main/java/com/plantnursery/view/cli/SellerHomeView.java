@@ -1,7 +1,5 @@
 package com.plantnursery.view.cli;
 
-import com.plantnursery.view.cli.AbstractView;
-
 public class SellerHomeView extends AbstractView {
 
     @Override

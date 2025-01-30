@@ -1,4 +1,4 @@
-module PrivateEvents {
+module PlantNursery {
     requires java.logging;
     requires javafx.fxml;
     requires javafx.controls;
@@ -6,19 +6,20 @@ module PrivateEvents {
     requires java.sql;
     requires java.desktop;
 
-    opens com.privateevents.controller.gui.fx;
-    opens com.privateevents.utils.view.fx;
-    opens com.privateevents.bean;
-    opens com.privateevents.engineering.payment;
-    opens com.privateevents.utils.dao;
+    opens com.plantnursery.controller.gui.fx;
+    opens com.plantnursery.bean;
+    opens com.plantnursery.payment;
+    opens com.plantnursery.utils.dao;
 
-    exports com.privateevents.controller.gui.fx;
-    exports com.privateevents.bean;
-    exports com.privateevents.utils.view.fx;
-    exports com.privateevents.utils.dao;
-    exports com.privateevents.engineering.payment;
-    exports com.privateevents.exception;
-    exports com.privateevents;
-    exports com.privateevents.utils;
-    opens com.privateevents.utils;
+    exports com.plantnursery.controller.gui.fx;
+    exports com.plantnursery.bean;
+    exports com.plantnursery.utils.dao;
+    exports com.plantnursery.payment;
+    exports com.plantnursery.exception;
+    exports com.plantnursery;
+    exports com.plantnursery.utils;
+    opens com.plantnursery.utils;
+    exports com.plantnursery.utils.view.fx;
+    opens com.plantnursery.utils.view.fx;
+    opens com.plantnursery.utils.dao.factory;
 }

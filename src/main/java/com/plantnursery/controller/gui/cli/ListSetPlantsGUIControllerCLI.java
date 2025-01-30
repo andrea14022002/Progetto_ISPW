@@ -2,8 +2,6 @@ package com.plantnursery.controller.gui.cli;
 
 import com.plantnursery.bean.SetPlantBean;
 import com.plantnursery.controller.app.CreateOrderController;
-import com.plantnursery.controller.gui.cli.AbstractGUIControllerCLI;
-import com.plantnursery.controller.gui.cli.SetPlantDetailsGUIControllerCLI;
 import com.plantnursery.exception.NotFoundException;
 import com.plantnursery.exception.OperationFailedException;
 import com.plantnursery.utils.SessionManager;
@@ -63,7 +61,7 @@ public class ListSetPlantsGUIControllerCLI extends AbstractGUIControllerCLI {
     private void selectSetPlant() {
         int num = listSetPlantsView.selectSetPlant();
         if (num < 1 || num > setPlants.size()){
-            listSetPlantsView.showMessage("Event not found!");
+            listSetPlantsView.showMessage("SetPlant not found!");
             start();
         } else {
             SetPlantBean setPlant = setPlants.get(num - 1);

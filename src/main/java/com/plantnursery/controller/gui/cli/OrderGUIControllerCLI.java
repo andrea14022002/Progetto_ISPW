@@ -55,7 +55,7 @@ public class OrderGUIControllerCLI extends AbstractGUIControllerCLI {
         String[] ts = new String[plants.size()];
         int i = 0;
         for (PlantBean p : plants) {
-                ts[i] = String.format("%d - Plant name: %s, Plant scientific name: %s$, Plant Description: %s %n", i + 1, p.getName(), p.getScientificName());
+                ts[i] = String.format("%d - Plant name: %s, Plant scientific name: %s", i + 1, p.getName(), p.getScientificName());
                 i++;
             }
         orderView.showPlants(ts);
@@ -67,7 +67,7 @@ public class OrderGUIControllerCLI extends AbstractGUIControllerCLI {
             String[] data = orderView.insertData();
             OrderBean order = new OrderBean();
 
-            if (data[0].isEmpty() || data[1].isEmpty() || data[2].isEmpty() || data[3].isEmpty() || data[4].isEmpty() || data[5].isEmpty() || data[6].isEmpty() || data[7].isEmpty()) {
+            if (data[0].isEmpty() || data[1].isEmpty() || data[2].isEmpty() || data[3].isEmpty() || data[4].isEmpty() || data[5].isEmpty() || data[6].isEmpty()) {
                 throw new IncorrectDataException("All fields are required!");
             }
             order.setFirstName(data[0]);
@@ -77,10 +77,6 @@ public class OrderGUIControllerCLI extends AbstractGUIControllerCLI {
             order.setTelephone(data[4]);
             order.setCity(data[5]);
             order.setOnlinePayment(Boolean.valueOf(data[6]));
-
-            if (setPlant.getQuantity() <= 0) {
-                throw new OperationFailedException("No tickets available for this type.");
-            }
 
             CreateOrderController controller = new CreateOrderController();
             controller.sendReservation(setPlant, order);
