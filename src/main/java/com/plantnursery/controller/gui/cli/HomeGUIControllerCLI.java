@@ -28,7 +28,7 @@ public class HomeGUIControllerCLI extends AbstractGUIControllerCLI {
     private void loginPage(){
         LoginAndRegisterGUIControllerCLI loginAndRegisterGUIController = new LoginAndRegisterGUIControllerCLI(currentSession, returningHome);
         loginAndRegisterGUIController.start();
-        returningHome.setReturningHome(false);
+        returningHome.setReturning(false);
         start();
     }
 
@@ -38,7 +38,7 @@ public class HomeGUIControllerCLI extends AbstractGUIControllerCLI {
         ListSetPlantsGUIControllerCLI listSetPlantsGUIController = new ListSetPlantsGUIControllerCLI(currentSession, returningHome);
         listSetPlantsGUIController.start();
         SessionManager.getSessionManager().getSessionFromId(currentSession).resetMonth();
-        returningHome.setReturningHome(false);
+        returningHome.setReturning(false);
         start();
     }
 }

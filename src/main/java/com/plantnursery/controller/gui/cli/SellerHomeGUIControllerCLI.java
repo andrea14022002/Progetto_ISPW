@@ -28,7 +28,7 @@ public class SellerHomeGUIControllerCLI extends AbstractGUIControllerCLI {
 
     private void setPlant() {
         view.showError("View Set Plants not implemented yet!");
-        if(Boolean.FALSE.equals(returningHome.getReturningHome())) {
+        if(Boolean.FALSE.equals(returningHome.getReturning())) {
             start();
         }
     }
@@ -36,14 +36,14 @@ public class SellerHomeGUIControllerCLI extends AbstractGUIControllerCLI {
     private void notif() {
         NotificationsGUIControllerCLI notificationsGUIController = new NotificationsGUIControllerCLI(currentSession, returningHome);
         notificationsGUIController.start();
-        if(Boolean.FALSE.equals(returningHome.getReturningHome())) {
+        if(Boolean.FALSE.equals(returningHome.getReturning())) {
             start();
         }
     }
 
     private void setting() {
         view.showError("View Settings not implemented yet!");
-        if(Boolean.FALSE.equals(returningHome.getReturningHome())) {
+        if(Boolean.FALSE.equals(returningHome.getReturning())) {
             start();
         }
     }

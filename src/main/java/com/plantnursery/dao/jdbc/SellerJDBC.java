@@ -27,6 +27,8 @@ public class SellerJDBC implements SellerDAO {
     private static final String COLUMN_ADDRESS = "Address";
     private static final String COLUMN_CITY = "City";
 
+    private static final String ERROR_SELECT_SELLER = "Error in selectSeller: ";
+
     @Override
     public Seller selectSeller(String idSeller) throws DAOException {
 
@@ -41,7 +43,7 @@ public class SellerJDBC implements SellerDAO {
             addNotifAndSetPlants(seller);
             return seller;
         } catch (SQLException | EncryptionException e) {
-            throw new DAOException("Error in selectSeller: " + e.getMessage(), e, GENERIC);
+            throw new DAOException(ERROR_SELECT_SELLER + e.getMessage(), e, GENERIC);
         }
     }
 
@@ -57,7 +59,7 @@ public class SellerJDBC implements SellerDAO {
             rs.close();
             return seller;
         } catch (SQLException | EncryptionException e) {
-            throw new DAOException("Error in selectSeller: " + e.getMessage(), e, GENERIC);
+            throw new DAOException(ERROR_SELECT_SELLER + e.getMessage(), e, GENERIC);
         }
     }
 
@@ -74,7 +76,7 @@ public class SellerJDBC implements SellerDAO {
             addNotifAndSetPlants(seller);
             return seller;
         } catch (SQLException | EncryptionException e) {
-            throw new DAOException("Error in selectSeller: " + e.getMessage(), e, GENERIC);
+            throw new DAOException(ERROR_SELECT_SELLER + e.getMessage(), e, GENERIC);
         }
     }
 

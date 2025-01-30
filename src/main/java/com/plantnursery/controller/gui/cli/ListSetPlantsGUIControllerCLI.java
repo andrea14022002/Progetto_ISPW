@@ -71,7 +71,7 @@ public class ListSetPlantsGUIControllerCLI extends AbstractGUIControllerCLI {
                 setPlantDetailsGUIController.start();
             }
             SessionManager.getSessionManager().getSessionFromId(currentSession).resetSetPlant();
-            if (Boolean.FALSE.equals(returningHome.getReturningHome())) {
+            if (Boolean.FALSE.equals(returningHome.getReturning())) {
                 start();
             }
         }

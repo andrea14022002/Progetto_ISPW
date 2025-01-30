@@ -2,18 +2,18 @@ package com.plantnursery.utils.view.cli;
 
 public class ReturningHome {
 
-    private Boolean returningHome;
+    private Boolean returning;
 
     public ReturningHome() {
-        this.returningHome = false;
+        this.returning = false;
     }
 
-    public void setReturningHome(Boolean returningHome) {
-        this.returningHome = returningHome;
+    public void setReturning(Boolean returning) {
+        this.returning = returning;
     }
 
-    public Boolean getReturningHome() {
-        return returningHome;
+    public Boolean getReturning() {
+        return returning;
     }
 
 }

@@ -8,7 +8,7 @@ public class Seller extends User{
     @Serial
     private static final long serialVersionUID = 1L;
 
-    public Seller(String username, String password, String email, String firstName, String lastName, String infoPayPal, String address, String city) throws EncryptionException, com.plantnursery.exception.EncryptionException {
+    public Seller(String username, String password, String email, String firstName, String lastName, String infoPayPal, String address, String city) throws EncryptionException {
         super(username, password);
         this.firstName = firstName;
         this.lastName = lastName;

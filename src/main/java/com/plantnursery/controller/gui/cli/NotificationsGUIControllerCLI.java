@@ -90,7 +90,7 @@ public class NotificationsGUIControllerCLI extends AbstractGUIControllerCLI {
     }
 
     private void goSellerHome() {
-        returningHome.setReturningHome(false);
+        returningHome.setReturning(false);
     }
 
 

@@ -52,7 +52,7 @@ public class LoginAndRegisterGUIControllerCLI extends AbstractGUIControllerCLI {
         } catch (OperationFailedException e) {
             view.showError(e.getMessage());
         }
-        if (Boolean.FALSE.equals(returningHome.getReturningHome())) {
+        if (Boolean.FALSE.equals(returningHome.getReturning())) {
             start();
         }
     }
@@ -80,7 +80,7 @@ public class LoginAndRegisterGUIControllerCLI extends AbstractGUIControllerCLI {
         } catch (OperationFailedException | DuplicateEntryException e) {
             view.showError(e.getMessage());
         }
-        if (Boolean.FALSE.equals(returningHome.getReturningHome())) {
+        if (Boolean.FALSE.equals(returningHome.getReturning())) {
             start();
         }
     }

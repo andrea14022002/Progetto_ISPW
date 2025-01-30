@@ -11,13 +11,12 @@ public abstract class FactorySingletonDAO {
     public static synchronized FactorySingletonDAO getDefaultDAO (){
         if (instance == null) {
             String daoType = System.getProperty("DAO_TYPE");
-            switch (TypeDAO.valueOf(daoType)) {
-                case JDBC:
-                    instance = new JDBCFactory();
-                    break;
-                case FS:
-                    instance = new FSFactory();
-                    break;
+            if (daoType != null && daoType.equalsIgnoreCase("JDBC")) {
+                instance = new JDBCFactory();
+            } else if (daoType != null && daoType.equalsIgnoreCase("FS")) {
+                instance = new FSFactory();
+            } else {
+                throw new IllegalArgumentException("Invalid DAO_TYPE: " + daoType);
             }
             return instance;
         }

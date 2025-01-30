@@ -53,7 +53,7 @@ public class SetPlantDetailsGUIControllerCLI extends AbstractGUIControllerCLI {
             OrderGUIControllerCLI orderGUIController = new OrderGUIControllerCLI(currentSession, returningHome);
             orderGUIController.start();
         }
-        if(Boolean.FALSE.equals(returningHome.getReturningHome())){
+        if(Boolean.FALSE.equals(returningHome.getReturning())){
             start();
         }
     }

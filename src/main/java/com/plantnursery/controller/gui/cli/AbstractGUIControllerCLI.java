@@ -18,17 +18,17 @@ public abstract class AbstractGUIControllerCLI {
     }
 
     protected void goBack() {
-        returningHome.setReturningHome(false);
+        returningHome.setReturning(false);
     }
 
     protected void goHome() {
         SessionManager.getSessionManager().getSessionFromId(currentSession).softReset();
-        returningHome.setReturningHome(true);
+        returningHome.setReturning(true);
     }
 
     protected void logout() {
         SessionManager.getSessionManager().getSessionFromId(currentSession).reset();
-        returningHome.setReturningHome(true);
+        returningHome.setReturning(true);
     }
 
 }
