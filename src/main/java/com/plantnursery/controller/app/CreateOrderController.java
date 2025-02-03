@@ -110,7 +110,7 @@ public class CreateOrderController {
         }
     }
 
-    public void sendReservation(SetPlantBean setPlantBean, OrderBean orderBean) throws OperationFailedException, DuplicateEntryException {
+    public void sendOrder(SetPlantBean setPlantBean, OrderBean orderBean) throws OperationFailedException, DuplicateEntryException {
 
         try {
             checkOrderValid(setPlantBean);

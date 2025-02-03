@@ -67,7 +67,7 @@ public class OrderGUIControllerFX extends AbstractGUIControllerFX {
         try {
             OrderBean order = getOrder();
             CreateOrderController createOrderController = new CreateOrderController();
-            createOrderController.sendReservation(setPlant, order);
+            createOrderController.sendOrder(setPlant, order);
             setMsg(message, "Order successful! Your order code is: " + order.getCodeOrder());
         } catch (IncorrectDataException | DuplicateEntryException e) {
             setMsg(message, e.getMessage());

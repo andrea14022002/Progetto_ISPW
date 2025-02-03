@@ -31,7 +31,7 @@ public class OrderJDBC implements OrderDAO {
                 ResultSet.CONCUR_READ_ONLY)){
                 ResultSet rs = OrderQueries.countOrders(stmt, idSetPlant);
                 if (rs.next()) {
-                    id = rs.getInt(1) + 1;
+                    id = stmt.getUpdateCount() + 1;
                     order.setIdAndCodeOrder(id);
                 }
                 OrderQueries.insertOrder(stmt, order.getCodeOrder(),order.getLastname(), order.getFirstname(),

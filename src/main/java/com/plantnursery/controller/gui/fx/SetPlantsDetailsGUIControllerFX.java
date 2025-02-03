@@ -78,7 +78,7 @@ public class SetPlantsDetailsGUIControllerFX extends AbstractGUIControllerFX {
         seller = controller.getSeller(setPlant);
 
         title.setText(setPlant.getName());
-        info.setText("Seller Address: " + seller.getAddress() + " , " + seller.getCity());
+        info.setText("Seller Address: " + seller.getAddress());
         details.setText(setPlant.toString(plants));
     }
 }

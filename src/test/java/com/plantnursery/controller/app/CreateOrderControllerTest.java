@@ -35,7 +35,7 @@ class CreateOrderControllerTest {
     }
 
     @Test
-    void testSendReservation() throws OperationFailedException, IncorrectDataException, DuplicateEntryException, NotFoundException {
+    void testSendOrder() throws OperationFailedException, IncorrectDataException, DuplicateEntryException, NotFoundException {
         System.setProperty("DAO_TYPE", "JDBC");
         CreateOrderController createOrderController = new CreateOrderController();
         SetPlantBean setPlantBean = createOrderController.findSetPlants("Milan").getFirst();
@@ -48,7 +48,7 @@ class CreateOrderControllerTest {
         orderBean.setCity("Bologna");
         orderBean.setAddress("Via Nazionale, 89");
         orderBean.setOnlinePayment(false);
-        createOrderController.sendReservation(setPlantBean, orderBean);
+        createOrderController.sendOrder(setPlantBean, orderBean);
         assertNotNull(orderBean.getCodeOrder());
     }
 }

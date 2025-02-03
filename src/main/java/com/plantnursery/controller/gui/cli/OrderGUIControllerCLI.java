@@ -79,7 +79,7 @@ public class OrderGUIControllerCLI extends AbstractGUIControllerCLI {
             order.setOnlinePayment(Boolean.valueOf(data[6]));
 
             CreateOrderController controller = new CreateOrderController();
-            controller.sendReservation(setPlant, order);
+            controller.sendOrder(setPlant, order);
             orderView.showMessage("Order successful! Your order code is: " + order.getCodeOrder());
         } catch (OperationFailedException | DuplicateEntryException e) {
             orderView.showError(e.getMessage());
