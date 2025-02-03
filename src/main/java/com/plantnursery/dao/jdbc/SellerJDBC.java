@@ -25,7 +25,6 @@ public class SellerJDBC implements SellerDAO {
     private static final String COLUMN_LASTNAME = "LastName";
     private static final String COLUMN_INFO_PAYPAL = "InfoPayPal";
     private static final String COLUMN_ADDRESS = "Address";
-    private static final String COLUMN_CITY = "City";
 
     private static final String ERROR_SELECT_SELLER = "Error in selectSeller: ";
 
@@ -99,7 +98,7 @@ public class SellerJDBC implements SellerDAO {
 
     private Seller fromResultSet(ResultSet rs) throws SQLException, EncryptionException {
         return new Seller(rs.getString(COLUMN_USERNAME),rs.getString(COLUMN_PASSWORD),rs.getString(COLUMN_EMAIL), rs.getString(COLUMN_FIRSTNAME),
-                rs.getString(COLUMN_LASTNAME), rs.getString(COLUMN_INFO_PAYPAL), rs.getString(COLUMN_ADDRESS), rs.getString(COLUMN_CITY));
+                rs.getString(COLUMN_LASTNAME), rs.getString(COLUMN_INFO_PAYPAL), rs.getString(COLUMN_ADDRESS));
     }
 
     private void addNotifAndSetPlants(Seller seller) throws DAOException {

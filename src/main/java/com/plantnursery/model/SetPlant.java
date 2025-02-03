@@ -21,26 +21,19 @@ public class SetPlant implements Serializable {
 
     private String plantMonth;
 
-    private Integer availability;
-
     private String sellerUsername;
 
     private transient List<Plant> plants;
 
     private transient List<Order> orders;
 
-    private Integer quantity;
-
-    public SetPlant(Integer id, String name, String description, String temp, String plantMonth, Double price, Integer quantity,
-                    Integer availability, String sellerUsername) {
+    public SetPlant(Integer id, String name, String description, String temp, String plantMonth, Double price, String sellerUsername) {
         this.idSet = id;
         this.name = name;
         this.desription = description;
         this.temperature = temp;
         this.plantMonth = plantMonth;
-        this.quantity = quantity;
         this.price = price;
-        this.availability = availability;
         this.sellerUsername = sellerUsername;
         this.orders = new ArrayList<>();
         this.plants = new ArrayList<>();
@@ -77,10 +70,6 @@ public class SetPlant implements Serializable {
         this.name = name;
     }
 
-    public void setOrderClosed(Integer availability) {
-        this.availability = availability;
-    }
-
     public String getName() {
         return this.name;
     }
@@ -106,7 +95,7 @@ public class SetPlant implements Serializable {
     }
 
     public Integer getOrderClosed() {
-        return this.availability;
+        return this.idSet;
     }
 
     public Integer getIdSet() {
@@ -118,14 +107,6 @@ public class SetPlant implements Serializable {
 
     public List<Plant> getPlants(){
         return this.plants;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public Integer getQuantity(){
-        return quantity;
     }
 
     public void setTransientParams() {

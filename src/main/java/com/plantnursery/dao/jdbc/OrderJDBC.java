@@ -34,8 +34,8 @@ public class OrderJDBC implements OrderDAO {
                     id = stmt.getUpdateCount() + 1;
                     order.setIdAndCodeOrder(id);
                 }
-                OrderQueries.insertOrder(stmt, order.getCodeOrder(),order.getLastname(), order.getFirstname(),
-                        order.getEmail(), order.getTelephone(), order.getAddress(), order.getCity(),
+                OrderQueries.insertOrder(stmt, order.getCodeOrder(),
+                        order.getEmail(), order.getTelephone(), order.getAddress(),
                         (Boolean.TRUE.equals(order.getOnlinePayment()) ? 1 : 0), idSetPlant);
                 rs.close();
                 return order;
