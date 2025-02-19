@@ -86,7 +86,7 @@ public class SetPlantJDBC implements SetPlantDAO {
 
     private SetPlant fromResultSet(ResultSet rs) throws SQLException {
         return new SetPlant(rs.getInt(COLUMN_IDSETPLANT), rs.getString(COLUMN_NAME), rs.getString(COLUMN_DESC), rs.getString(COLUMN_TEMPERATURE),
-                rs.getString(COLUMN_PLANTMONTH),rs.getInt(COLUMN_QUANTITY), rs.getInt(COLUMN_ORDERCLOSED),rs.getDouble(COLUMN_PRICE) , rs.getString(COLUMN_SELLER));
+                rs.getString(COLUMN_PLANTMONTH),rs.getInt(COLUMN_QUANTITY), rs.getString(COLUMN_SELLER));
     }
 
 }

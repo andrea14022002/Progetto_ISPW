@@ -8,12 +8,12 @@ public class Seller extends User{
     @Serial
     private static final long serialVersionUID = 1L;
 
-    public Seller(String username, String password, String email, String firstName, String lastName, String infoPayPal, String address, String city) throws EncryptionException {
+    public Seller(String username, String password, String email, String firstName, String lastName,
+                  String infoPayPal, String address) throws EncryptionException {
         super(username, password);
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.city = city;
         this.infoPayPal = infoPayPal;
         this.address = address;
     }
@@ -36,7 +36,7 @@ public class Seller extends User{
 
     public void addSetPlant(SetPlant setPlant) {
         this.setPlants.add(new SetPlant(setPlant.getIdSet(), setPlant.getName(), setPlant.getDescription(), setPlant.getTemperature(),
-                setPlant.getPlantMonth(), setPlant.getQuantity(), setPlant.getAvailability(), setPlant.getPrice(), setPlant.getSellerUsername()));
+                setPlant.getPlantMonth(), setPlant.getQuantity(), setPlant.getSellerUsername()));
     }
 
     public List<SetPlant> getSets() {

@@ -32,14 +32,12 @@ public class SetPlant implements Serializable {
     private transient List<Order> orders;
 
     public SetPlant(Integer id, String name, String description, String temp, String plantMonth,
-                    Integer quantity, Integer availability, Double price, String sellerUsername) {
+                    Integer quantity, String sellerUsername) {
         this.idSet = id;
         this.name = name;
         this.desription = description;
         this.temperature = temp;
         this.plantMonth = plantMonth;
-        this.price = price;
-        this.availability = availability;
         this.quantity = quantity;
         this.sellerUsername = sellerUsername;
         this.orders = new ArrayList<>();
