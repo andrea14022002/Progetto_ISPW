@@ -54,7 +54,6 @@ public abstract class AbstractView {
     }
 
     public void showMessage(String message) {
-        System.out.println(message);
     }
 
     protected void getInput(Scanner scanner, String[] data, Integer index, String message) {

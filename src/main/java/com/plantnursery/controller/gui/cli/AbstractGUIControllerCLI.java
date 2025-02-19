@@ -13,7 +13,6 @@ public abstract class AbstractGUIControllerCLI {
 
     protected void exit(){
         SessionManager.getSessionManager().removeSession(currentSession);
-        System.out.println("Exiting...Bye bye!");
         System.exit(0);
     }
 
