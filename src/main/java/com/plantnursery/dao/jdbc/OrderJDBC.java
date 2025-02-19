@@ -34,8 +34,8 @@ public class OrderJDBC implements OrderDAO {
                     id = stmt.getUpdateCount() + 1;
                     order.setIdAndCodeOrder(id);
                 }
-                OrderQueries.insertOrder(stmt, order.getCodeOrder(),
-                        order.getEmail(), order.getTelephone(), order.getAddress(),
+                OrderQueries.insertOrder(stmt, order.getCodeOrder(), order.getLastname(), order.getFirstname(),
+                        order.getEmail(), order.getTelephone(), order.getAddress(), order.getCity(),
                         (Boolean.TRUE.equals(order.getOnlinePayment()) ? 1 : 0), idSetPlant);
                 rs.close();
                 return order;
@@ -50,18 +50,18 @@ public class OrderJDBC implements OrderDAO {
 
     @Override
     public List<Order> selectOrderBySetPlant(Integer idSetPlant) throws DAOException {
-        List<Order> bookings = new ArrayList<>();
+        List<Order> orders = new ArrayList<>();
         try (Statement stmt = SingletonConnector.getConnection().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                 ResultSet.CONCUR_READ_ONLY)){
             ResultSet rs = OrderQueries.selectOrderBySetPlant(stmt, idSetPlant);
             while (rs.next()) {
                 Order order = fromResultSet(rs);
-                bookings.add(order);
+                orders.add(order);
             }
             rs.close();
-            return bookings;
+            return orders;
         }catch (SQLException e) {
-            throw new DAOException("Error selecting booking: " + e.getMessage(), e, GENERIC);
+            throw new DAOException("Error selecting orders: " + e.getMessage(), e, GENERIC);
         }
     }
 

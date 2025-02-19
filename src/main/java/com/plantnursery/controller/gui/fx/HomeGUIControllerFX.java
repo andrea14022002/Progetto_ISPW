@@ -12,8 +12,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
-import java.util.logging.Logger;
-
 public class HomeGUIControllerFX extends AbstractGUIControllerFX {
 
     @FXML

@@ -17,7 +17,6 @@ public class Main  {
     public static void main(String[] args) throws IOException {
 
         InputStream input;
-
         input = new FileInputStream(LOGGER_SETTINGS);
         LogManager.getLogManager().readConfiguration(input);
         input.close();

@@ -8,11 +8,12 @@ public class Seller extends User{
     @Serial
     private static final long serialVersionUID = 1L;
 
-    public Seller(String username, String password, String email, String firstName, String lastName, String infoPayPal, String address) throws EncryptionException {
+    public Seller(String username, String password, String email, String firstName, String lastName, String infoPayPal, String address, String city) throws EncryptionException {
         super(username, password);
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.city = city;
         this.infoPayPal = infoPayPal;
         this.address = address;
     }
@@ -27,13 +28,15 @@ public class Seller extends User{
 
     private String address;
 
+    private String city;
+
     private transient List<SetPlant> setPlants = new ArrayList<>();
 
     private transient List<Notification> notifs = new ArrayList<>();
 
     public void addSetPlant(SetPlant setPlant) {
         this.setPlants.add(new SetPlant(setPlant.getIdSet(), setPlant.getName(), setPlant.getDescription(), setPlant.getTemperature(),
-                setPlant.getPlantMonth(), setPlant.getPrice(), setPlant.getSellerUsername()));
+                setPlant.getPlantMonth(), setPlant.getQuantity(), setPlant.getAvailability(), setPlant.getPrice(), setPlant.getSellerUsername()));
     }
 
     public List<SetPlant> getSets() {
@@ -102,7 +105,7 @@ public class Seller extends User{
     }
 
     public String getCity() {
-        return this.address;
+        return this.city;
     }
 
 }

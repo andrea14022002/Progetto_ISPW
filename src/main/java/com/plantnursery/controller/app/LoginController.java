@@ -36,7 +36,7 @@ public class LoginController {
         public UserBean register(SellerBean sellBean) throws OperationFailedException, DuplicateEntryException {
             try{
                 Seller seller = new Seller(sellBean.getUsername(), sellBean.getPassword(), sellBean.getEmail(),
-                        sellBean.getFirstName(), sellBean.getLastName(), sellBean.getInfoPayPal(), sellBean.getAddress());
+                        sellBean.getFirstName(), sellBean.getLastName(), sellBean.getInfoPayPal(), sellBean.getAddress(), sellBean.getCity());
                 FactorySingletonDAO.getDefaultDAO().getSellerDAO().insertSeller(seller);
                 return ToBeanConverter.fromSellerToSellerBean(seller);
             } catch (DAOException e) {

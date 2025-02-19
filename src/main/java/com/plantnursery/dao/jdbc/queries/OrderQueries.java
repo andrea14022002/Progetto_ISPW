@@ -10,9 +10,9 @@ public class OrderQueries {
         throw new IllegalStateException("Utility class");
     }
 
-    public static void insertOrder(Statement stmt, String codeOrder, String email, String telephone, String address, int onlinePayment, Integer idSetPlant) throws SQLException {
-        String query = String.format("INSERT INTO `Order` (CodeOrder, SetPlant, Email, Telephone,OnlinePayment, Address) " +
-                "VALUES ('%s', '%d', '%s','%s','%d', '%s')", codeOrder, idSetPlant, email, telephone, onlinePayment, address);
+    public static void insertOrder(Statement stmt, String codeOrder, String lastName, String firstName, String email, String telephone, String address, String city, int onlinePayment, Integer idSetPlant) throws SQLException {
+        String query = String.format("INSERT INTO `Order` (CodeOrder, SetPlant, LastName, FirstName, Email, Telephone,OnlinePayment, Address, City) " +
+                "VALUES ('%s', '%d','%s','%s', '%s','%s','%d', '%s', '%s')", codeOrder, idSetPlant, lastName, firstName, email, telephone, onlinePayment, address, city);
         stmt.executeUpdate(query);
     }
 

@@ -23,7 +23,7 @@ public class NotificationQueries {
     }
 
     public static void deleteNotification(Statement stmt, String idSeller, String nameSetPlant, String orderCode, Timestamp time) throws SQLException {
-        String query = String.format("DELETE FROM Notif WHERE Seller = '%s' AND SetPlantName = '%s' AND BookingCode = '%s' AND DateTime = '%s' ",
+        String query = String.format("DELETE FROM Notif WHERE Seller = '%s' AND SetPlantName = '%s' AND OrderCode = '%s' AND DateTime = '%s' ",
                 idSeller, nameSetPlant, orderCode, time);
         stmt.executeUpdate(query);
     }
